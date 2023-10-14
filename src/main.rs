@@ -14,8 +14,18 @@ fn App() -> impl IntoView {
                 set_count.update(|n| *n += 1);
             }
         >
-            "Click me: "
+            "+"
+        </button>
+        <p>
+            "Current count: "
             {count}
+        </p>
+        <button
+            on:click=move |_| {
+                set_count.update(|n| *n -= 1);
+            }
+        >
+            "-"
         </button>
     }
 }
